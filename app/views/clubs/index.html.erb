@@ -1,0 +1,29 @@
+<h1>Clubs</h1>
+
+<p><a href="/new_club">Add a New Club</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Teacher</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @clubs.each do |club| %>
+    <tr>
+          <td><%= club.name %></td>
+          <td><%= club.teacher_id %></td>
+          <td><a href="/clubs/<%= club.id %>">Show</a>
+        </td>
+      <td><a href="/clubs/<%= club.id %>/edit">Edit</a></td>
+      <td><a href="/clubs/<%= club.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

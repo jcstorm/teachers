@@ -1,0 +1,17 @@
+<h1>Editing Club #<%= @club.id %></h1>
+
+<form action="/clubs/<%= @club.id %>/update">
+  <div>
+    <label for="name">name</label><br />
+    <input id="name" name="name" value="<%= @club.name  %>" type="text" />
+  </div>
+  <div>
+    <label for="teacher_id">teacher_id</label><br />
+    <input id="teacher_id" name="teacher_id" value="<%= @club.teacher_id  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

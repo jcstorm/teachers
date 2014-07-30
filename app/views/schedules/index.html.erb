@@ -1,0 +1,47 @@
+<h1>Schedules</h1>
+
+<p><a href="/new_schedule">Add a New Schedule</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th>P5</th>
+      <th>P6</th>
+      <th>P7</th>
+      <th>P8</th>
+      <th>P9</th>
+      <th>P10</th>
+      <th>Teacher</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @schedules.each do |schedule| %>
+    <tr>
+          <td><%= schedule.p1 %></td>
+          <td><%= schedule.p2 %></td>
+          <td><%= schedule.p3 %></td>
+          <td><%= schedule.p4 %></td>
+          <td><%= schedule.p5 %></td>
+          <td><%= schedule.p6 %></td>
+          <td><%= schedule.p7 %></td>
+          <td><%= schedule.p8 %></td>
+          <td><%= schedule.p9 %></td>
+          <td><%= schedule.p10 %></td>
+          <td><%= schedule.teacher_id %></td>
+          <td><a href="/schedules/<%= schedule.id %>">Show</a>
+        </td>
+      <td><a href="/schedules/<%= schedule.id %>/edit">Edit</a></td>
+      <td><a href="/schedules/<%= schedule.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,13 @@
+<h1>Club #<%= @club.id %></h1>
+
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @club.name %></p>
+</div>
+<div>
+  <strong>Teacher</strong>:<br />
+  <p><%= @club.teacher_id %></p>
+</div>
+
+<a href="/clubs/<%= @club.id %>/edit">Edit</a> |
+<a href="/clubs/<%= @club.id %>/destroy">Destroy</a>
