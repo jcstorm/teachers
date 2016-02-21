@@ -1,3 +1,3 @@
 class Club < ActiveRecord::Base
-  has_many  :teachers
+  belongs_to  :teacher
 end

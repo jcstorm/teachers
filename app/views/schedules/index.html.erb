@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Teacher</th>
       <th>P1</th>
       <th>P2</th>
       <th>P3</th>
@@ -15,7 +16,6 @@
       <th>P8</th>
       <th>P9</th>
       <th>P10</th>
-      <th>Teacher</th>
       <th></th>
       <th></th>
       <th></th>
@@ -25,6 +25,7 @@
   <tbody>
   <% @schedules.each do |schedule| %>
     <tr>
+        <td><%= schedule.teacher.name %></td>
           <td><%= schedule.p1 %></td>
           <td><%= schedule.p2 %></td>
           <td><%= schedule.p3 %></td>
@@ -35,11 +36,13 @@
           <td><%= schedule.p8 %></td>
           <td><%= schedule.p9 %></td>
           <td><%= schedule.p10 %></td>
-          <td><%= schedule.teacher_id %></td>
-          <td><a href="/schedules/<%= schedule.id %>">Show</a>
-        </td>
-      <td><a href="/schedules/<%= schedule.id %>/edit">Edit</a></td>
-      <td><a href="/schedules/<%= schedule.id %>/destroy">Destroy</a></td>
+          <td>
+          <div class="nav">
+          <a href="/schedules/<%= schedule.id %>"><span class="glyphicon glyphicon-zoom-in"></span> </a>&nbsp;
+          <a href="/schedules/<%= schedule.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> </a>&nbsp;
+          <a href="/schedules/<%= schedule.id %>/destroy"><span class="glyphicon glyphicon-trash"></span></a> 
+        </div>
+      </td>
     </tr>
   <% end %>
   </tbody>

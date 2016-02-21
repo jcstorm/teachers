@@ -1,0 +1,9 @@
+<h3>Department: <%= @department.name %></h3>
+
+<div>
+  <strong>Teacher</strong>:<br />
+  <p><%= @teacher.name %></p>
+</div>
+
+<a href="/departments/<%= @department.id %>/edit">Edit</a> |
+<a href="/departments/<%= @department.id %>/destroy">Destroy</a>

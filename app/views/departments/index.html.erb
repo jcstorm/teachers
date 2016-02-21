@@ -1,0 +1,29 @@
+<h1>Departments</h1>
+
+<p><a href="/new_department">Add a New Department</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Teacher</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @departments.each do |department| %>
+    <tr>
+          <td><%= department.name %></td>
+          <td><%= department.teacher_id %></td>
+          <td><a href="/departments/<%= department.id %>">Show</a>
+        </td>
+      <td><a href="/departments/<%= department.id %>/edit">Edit</a></td>
+      <td><a href="/departments/<%= department.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

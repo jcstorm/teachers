@@ -1,5 +1,5 @@
-<h1>Schedule #<%= @schedule.id %></h1>
-
+<h3>Schedule for <%= @schedule.teacher.name %></h3>
+<img src="<%= @schedule.teacher.image_url %>" class="small-thumb" />
 <div>
   <strong>P1</strong>:<br />
   <p><%= @schedule.p1 %></p>
@@ -40,10 +40,7 @@
   <strong>P10</strong>:<br />
   <p><%= @schedule.p10 %></p>
 </div>
-<div>
-  <strong>Teacher</strong>:<br />
-  <p><%= @schedule.teacher_id %></p>
-</div>
+
 
 <a href="/schedules/<%= @schedule.id %>/edit">Edit</a> |
 <a href="/schedules/<%= @schedule.id %>/destroy">Destroy</a>

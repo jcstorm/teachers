@@ -1,33 +1,39 @@
-<h1>Editing Teacher #<%= @teacher.id %></h1>
+<h1>Editing: <%= @teacher.name %></h1>
 
 <form action="/teachers/<%= @teacher.id %>/update">
-  <div>
-    <label for="name">name</label><br />
-    <input id="name" name="name" value="<%= @teacher.name  %>" type="text" />
+  
+  <div class="input-group edit">
+    <span class="input-group-addon">Teacher name</span>
+      <input type="text" class="form-control" placeholder="First Last" name="name" value="<%= @teacher.name  %>">
   </div>
-  <div>
-    <label for="email">email</label><br />
-    <input id="email" name="email" value="<%= @teacher.email  %>" type="text" />
+  
+  <div class="input-group edit">
+    <span class="input-group-addon">Email address</span>
+      <input type="text" class="form-control" placeholder="someone@yahoo.com" name="email" value="<%= @teacher.email  %>">
   </div>
-  <div>
-    <label for="department">department</label><br />
-    <input id="department" name="department" value="<%= @teacher.department  %>" type="text" />
+  
+  <div class="input-group edit">
+    <span class="input-group-addon">Department</span>
+      <input type="text" class="form-control" placeholder="example: math" name="department" value="<%= @teacher.department  %>">
   </div>
-  <div>
-    <label for="bio">bio</label><br />
-    <input id="bio" name="bio" value="<%= @teacher.bio  %>" type="text" />
+  
+  <div class="input-group edit">
+    <span class="input-group-addon">Bio</span>
+      <input type="text" class="form-control" placeholder="Something about this teacher..." name="bio" value="<%= @teacher.bio  %>">
   </div>
-  <div>
-    <label for="image_url">image_url</label><br />
-    <input id="image_url" name="image_url" value="<%= @teacher.image_url  %>" type="text" />
+ 
+  <div class="input-group edit">
+    <span class="input-group-addon">Image URL</span>
+      <img src="<%= @teacher.image_url %>" class="small-thumb" />
+      <input type="text" class="form-control" placeholder="Paste URL here" name="image_url" value="<%= @teacher.image_url  %>">
   </div>
-  <div>
-    <label for="location">location</label><br />
-    <input id="location" name="location" value="<%= @teacher.location  %>" type="text" />
+  
+  <div class="input-group edit">
+    <span class="input-group-addon">Room Location</span>
+      <input type="text" class="form-control" placeholder="example: 220" name="location" value="<%= @teacher.location  %>">
   </div>
+  
   <div>
-    <input type="submit">
+    <input type="submit" class="btn btn-primary"> <a href onclick="goBack()">&nbsp; cancel</span></a>
   </div>
 </form>
-
-

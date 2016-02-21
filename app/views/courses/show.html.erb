@@ -1,17 +1,16 @@
-<h1>Course #<%= @course.id %></h1>
+<h2>Course: <%= @course.name %></h2>
 
-<div>
-  <strong>Name</strong>:<br />
-  <p><%= @course.name %></p>
-</div>
 <div>
   <strong>Description</strong>:<br />
   <p><%= @course.description %></p>
 </div>
 <div>
   <strong>Teacher</strong>:<br />
-  <p><%= @course.teacher_id %></p>
+  <p><img src="<%= @course.teacher.image_url %>" class="tiny-thumb"> <a href="/teachers/<%= @course.teacher.id %>"><%= @course.teacher.name %></a></p>
 </div>
 
-<a href="/courses/<%= @course.id %>/edit">Edit</a> |
-<a href="/courses/<%= @course.id %>/destroy">Destroy</a>
+<div class="nav">
+    <a href onclick="goBack()"><span class="glyphicon glyphicon-chevron-left"></span> </a>&nbsp; 
+    <a href="/courses/<%= @course.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> </a>&nbsp;
+    <a href="/courses/<%= @course.id %>/destroy"><span class="glyphicon glyphicon-trash"></span> </a> 
+</div>

@@ -1,28 +1,28 @@
-<h1>New Course</h1>
+<h1>Add a Course</h1>
 
 <form action="/create_course">
   
-  <div>
-    <label for="name">Course Name</label><br />
-    <input id="name" name="name" type="text" />
+  <div class="input-group edit">
+    <span class="input-group-addon">Course name</span>
+      <input type="text" class="form-control" placeholder="ex: Fundamentals of IT" name="name">
   </div>
   
-  <div>
-    <label for="description">Description</label><br />
-    <input id="description" name="description" type="text" />
+   <div class="input-group edit">
+    <span class="input-group-addon">Description</span>
+      <input type="text" class="form-control" placeholder="Describe the course here, including any pre-requisites." name="description">
   </div>
   
-  <div>
-    <label for="teacher_id">Teacher</label><br />
+   <div class="input-group edit">
+    <span class="input-group-addon">Teacher for this course</span>
     <select name="teacher_id">
       <% Teacher.all.each do |teacher| %>
-      <option value="<%= teacher.id %>"><%= teacher.id %> <%= teacher.name %></option>
+        <option value="<%= teacher.id %>"><%= teacher.name %></option>
       <% end %>
-    </select>
+    </select> 
   </div>
   
   <div>
-    <input type="submit">
+     <input type="submit" class="btn btn-primary"> <a href onclick="goBack()">&nbsp; cancel</a>
   </div>
   
 </form>

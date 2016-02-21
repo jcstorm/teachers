@@ -17,11 +17,14 @@
   <% @clubs.each do |club| %>
     <tr>
           <td><%= club.name %></td>
-          <td><%= club.teacher_id %></td>
-          <td><a href="/clubs/<%= club.id %>">Show</a>
-        </td>
-      <td><a href="/clubs/<%= club.id %>/edit">Edit</a></td>
-      <td><a href="/clubs/<%= club.id %>/destroy">Destroy</a></td>
+          <td><%= club.teacher.name %></td>
+          <td>
+            <div class="nav">
+              <a href="/clubs/<%= club.id %>"><span class="glyphicon glyphicon-zoom-in"></span> </a>&nbsp;
+              <a href="/clubs/<%= club.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> </a>&nbsp;
+              <a href="/clubs/<%= club.id %>/destroy"><span class="glyphicon glyphicon-trash"></span></a> 
+            </div>
+          </td>
     </tr>
   <% end %>
   </tbody>

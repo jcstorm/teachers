@@ -6,10 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Description</th>
       <th>Teacher</th>
-      <th></th>
-      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -18,12 +15,14 @@
   <% @courses.each do |course| %>
     <tr>
           <td><%= course.name %></td>
-          <td><%= course.description %></td>
-          <td><%= course.teacher_id %></td>
-          <td><a href="/courses/<%= course.id %>">Show</a>
-        </td>
-      <td><a href="/courses/<%= course.id %>/edit">Edit</a></td>
-      <td><a href="/courses/<%= course.id %>/destroy">Destroy</a></td>
+          <td><%= course.teacher.try(:name) %></td>
+          <td>
+            <div class="nav">
+              <a href="/courses/<%= course.id %>"><span class="glyphicon glyphicon-zoom-in"></span> </a>&nbsp;
+              <a href="/courses/<%= course.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> </a>&nbsp;
+              <a href="/courses/<%= course.id %>/destroy"><span class="glyphicon glyphicon-trash"></span></a> 
+            </div>
+          </td>
     </tr>
   <% end %>
   </tbody>

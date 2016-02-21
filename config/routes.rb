@@ -1,6 +1,24 @@
 Rails.application.routes.draw do
+  # Routes for the Department resource:
+  # CREATE
+  get '/new_department' => 'departments#new'
+  get '/create_department' => 'departments#create'
+
+  # READ
+  get '/departments' => 'departments#index'
+  get '/departments/:id' => 'departments#show'
+
+  # UPDATE
+  get '/departments/:id/edit' => 'departments#edit'
+  get '/departments/:id/update' => 'departments#update'
+
+  # DELETE
+  get '/departments/:id/destroy' => 'departments#destroy'
+  #------------------------------
+
   # Routes for the Schedule resource:
   # CREATE
+  
   get '/new_schedule' => 'schedules#new'
   get '/create_schedule' => 'schedules#create'
 
@@ -66,6 +84,13 @@ Rails.application.routes.draw do
   # DELETE
   get '/teachers/:id/destroy' => 'teachers#destroy'
   #------------------------------
+  
+  # Routes for Search results
+  get '/search_results' => 'searches#show'
+  
+  #Route for no route specified
+  
+ get '/' => 'teachers#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
